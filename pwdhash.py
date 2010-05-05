@@ -142,30 +142,35 @@ def apply_constraints(phash, size, nonalphanumeric):
 
 def console_main():
     import getpass, sys, os
-    if len(sys.argv) > 1:
+    from os import waitpid
+    from subprocess import Popen, PIPE
+    from optparse import OptionParser
+    
+    def parse_cmd_line():
+        parser = OptionParser(usage=': %prog [-c] | [domain]')
+        parser.add_option('-c', action='store_true', dest='clipboard_domain')
+        parser.set_defaults(clipboard_domain = False)
+        return parser.parse_args()
+    
+    def copy(text):
+       command = ' '.join(["echo ", text, "| tr -d '\n' | pbcopy -Prefer txt"])
+       p = Popen(command, shell=True)
+       sts = waitpid(0, 0)
+    
+    (options, args) = parse_cmd_line()
+    
+    if args != []:
         domain = sys.argv[1]
+    elif options.clipboard_domain:
+        domain = Popen(["pbpaste"], stdout=PIPE).communicate()[0]
     else:
         domain = raw_input("domain: ").strip()
 
     password = getpass.getpass("Password for %s: " % domain)
     generated = generate(password, domain)
 
-    copied_to_clipboard = False
-    
-    if 'DISPLAY' in os.environ:
-        try:
-            import gtk
-            clip = gtk.Clipboard()
-            clip.set_text(generated)
-            clip.store()
-            copied_to_clipboard = True
-        except:
-            pass
+    copy(generated)
 
-    if copied_to_clipboard:
-        print "Password was copied to clipboard."
-    else:
-        print generated
 
 if __name__ == '__main__':
     console_main()
