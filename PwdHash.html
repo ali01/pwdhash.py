@@ -1,0 +1,81 @@
+
+<!-- saved from url=(0024)https://www.pwdhash.com/ -->
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <!--* Remote PwdHash Form
+      * An HTML form that calls the JavaScript implementation of PwdHash
+      * Version 1.0 Copyright (C) Stanford University 2004-2005
+      * Contributors: Dan Boneh, Collin Jackson, John Mitchell, Nick Miyake, and Blake Ross
+      * Distributed under the BSD License
+      * See http://crypto.stanford.edu/PwdHash for more info.
+      *-->
+  <TITLE>PwdHash</TITLE>
+  <SCRIPT src="./PwdHash_files/md5.js" type="text/javascript"></SCRIPT>
+  <SCRIPT src="./PwdHash_files/pwdhash.js" type="text/javascript"></SCRIPT>
+  <SCRIPT src="./PwdHash_files/hashed-password.js" type="text/javascript"></SCRIPT>
+  <SCRIPT src="./PwdHash_files/domain-extractor.js" type="text/javascript"></SCRIPT>
+  <LINK rel="stylesheet" type="text/css" href="./PwdHash_files/pwdhash.css">
+  <LINK rel="shortcut icon" href="https://www.pwdhash.com/favicon.ico">
+</HEAD><BODY onload="Init();">
+<TABLE align="right" style="margin: 3em 1em 1em 1em"><TBODY><TR><TD>
+<FORM name="hashform" action="https://www.pwdhash.com/error.html" method="POST" onsubmit="setTimeout(&#39;GenerateToTextField()&#39;, 0); return false;">
+<TABLE id="theHashForm"><TBODY><TR>
+<TD class="stepList">
+<DIV class="step" id="theSiteDomain">
+<H3>Site Address</H3>
+<P><INPUT type="text" name="domain"></P>
+</DIV>
+<DIV class="step" id="theSitePassword">
+<H3>Site Password</H3>
+<P><INPUT type="password" name="sitePassword"></P>
+</DIV>
+</TD>
+</TR>
+<TR>
+<TD class="stepList" colspan="2">
+<DIV class="step" id="theHashedPassword">
+<H3>Hashed Password</H3>	
+  <SPAN id="theGeneratePanel">
+    <INPUT type="text" name="hashedPassword" disabled="">
+    <INPUT type="submit" name"submitbutton"="" value="Generate">
+  </SPAN>
+<P align="center"><A id="theToggleModeLink" href="javascript:ToggleAdvancedMode()"></A></P>
+</DIV>
+</TD>
+</TR>
+</TBODY></TABLE>
+</FORM></TD></TR><TR><TD><DIV class="footer">Version 0.8 (<A href="https://crypto.stanford.edu/PwdHash/RemotePwdHash/">more versions</A>)</DIV>
+<DIV class="footer">Tip: You can save this page to disk.</DIV>
+</TD></TR></TBODY></TABLE>
+
+<P align="center"><IMG src="./PwdHash_files/stanford_seal64.gif" alt="Stanford" align="center" width="64" height="64"> </P>
+
+      <H1 align="center"><FONT color="#0000FF" face="Arial">
+         Stanford PwdHash
+	    </FONT></H1>
+	            
+<DIV id="theexplanation">
+<P>
+PwdHash generates theft-resistant passwords.
+The PwdHash browser extension invisibly generates these passwords when it is installed in your browser.
+You can activate this protection by pressing F2 before you type
+your password, or by choosing passwords that start with <TT>@@</TT>.
+If you don't want to install PwdHash on your computer, you can generate the passwords right here.
+</P><UL>
+<LI>Visit the <A href="http://crypto.stanford.edu/PwdHash/">Stanford project website</A>.</LI>
+<LI>Install
+<A href="https://addons.mozilla.org/firefox/1033/">PwdHash for Firefox</A>.</LI>
+<LI>Read the <A href="http://crypto.stanford.edu/PwdHash/pwdhash.pdf">USENIX Security Symposium 2005 paper</A> (PDF).</LI>
+<LI>Send us <A href="http://crypto.stanford.edu/PwdHash/feedback.php">feedback</A>.</LI>
+</UL>
+</DIV>
+
+<DIV style="text-align: center">
+ Contributors: <A href="http://www.blakeross.com/">Blake Ross</A>,
+    <A href="http://www.collinjackson.com/">Collin Jackson</A>,
+      Nicholas Miyake,
+        <A href="http://crypto.stanford.edu/~dabo/">Dan Boneh</A> and <A href="http://theory.stanford.edu/people/jcm/home.html">John C. 
+	    Mitchell</A>
+</DIV>
+
+
+</BODY></HTML>

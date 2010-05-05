@@ -1,0 +1,102 @@
+/*
+ * Stylesheet for Remote PwdHash
+ * Version 1.0 Copyright (C) Stanford University 2004-2005
+ * Contributors: Dan Boneh, Collin Jackson, John Mitchell, Nick Miyake, and Blake Ross
+ * Distributed under the BSD License
+ * See http://crypto.stanford.edu/PwdHash for more info.
+ */
+
+body 
+{ 
+  font-family: sans-serif; 
+  margin: 25px 25px 25px 25px; 
+  text-align: center; 
+  font-size: smaller;
+}
+
+table#theHashForm 
+{ 
+  border: 3px solid green; 
+  margin-left: auto; 
+  margin-right: auto; 
+  text-align: center;
+} 
+
+versionlinks
+{
+  padding: 0em 1em 1em 1em;
+  text-align: center;
+}
+
+table#theHashForm h3 
+{ 
+  margin: 5px 0px 5px 0px; 
+}
+
+table#theHashForm p 
+{ 
+  margin: 2px 2px 2px 2px; 
+}
+
+div#theexplanation 
+{
+  font-size: larger;
+  display:block;
+  text-align: left; 
+}
+
+div#theexplanation li
+{
+  padding-bottom: 1em;
+}
+
+div.parameterList 
+{ 
+  padding: 0px 2px 0px 10px; 
+  text-align: left;
+}
+
+td.stepList 
+{ 
+  padding: 0px 5px 0px 5px; 
+  vertical-align: top; 
+} 
+
+div.step 
+{ 
+  display:block; 
+  padding: 0px 0px 0px 0px; 
+}
+
+
+h1 
+{ 
+  text-align: center; 
+}
+
+div.footer 
+{
+ font-size: xx-small;
+ text-align: center; 
+}
+
+#theHashedPassword
+{
+  text-align: center;
+}
+
+#theToggleModeLink
+{
+  font-size: xx-small;
+}
+
+.notification
+{
+  font-color: green;
+}
+
+.warning
+{
+  font-color: red;
+}
+
