@@ -156,20 +156,24 @@ def console_main():
        command = ' '.join(["echo ", text, "| tr -d '\n' | pbcopy -Prefer txt"])
        p = Popen(command, shell=True)
        sts = waitpid(0, 0)
-    
-    (options, args) = parse_cmd_line()
-    
-    if args != []:
-        domain = sys.argv[1]
-    elif options.clipboard_domain:
-        domain = Popen(["pbpaste"], stdout=PIPE).communicate()[0]
-    else:
-        domain = raw_input("domain: ").strip()
 
-    password = getpass.getpass("Password for %s: " % domain)
-    generated = generate(password, domain)
+    try:
+        (options, args) = parse_cmd_line()
+    
+        if args != []:
+            domain = sys.argv[1]
+        elif options.clipboard_domain:
+            domain = Popen(["pbpaste"], stdout=PIPE).communicate()[0]
+        else:
+            domain = raw_input("domain: ").strip()
 
-    copy(generated)
+        password = getpass.getpass("Password for %s: " % domain)
+        generated = generate(password, domain)
+
+        copy(generated)
+    except:
+        print ''
+        pass
 
 
 if __name__ == '__main__':
