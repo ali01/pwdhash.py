@@ -1,6 +1,0 @@
-[submodule "src/make"]
-	path = src/make
-	url = ali01.com:/rep/make
-[submodule "src/simone"]
-	path = src/simone
-	url = ali01.com:/rep/simone
